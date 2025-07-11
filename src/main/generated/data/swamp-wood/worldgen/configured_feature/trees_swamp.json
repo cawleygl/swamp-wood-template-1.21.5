@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "swamp-wood:swamp_tree",
+    "features": [
+      {
+        "chance": 0.1,
+        "feature": "swamp-wood:swamp_willow"
+      },
+      {
+        "chance": 0.05,
+        "feature": "swamp-wood:swamp_huge_red_mushroom"
+      },
+      {
+        "chance": 0.05,
+        "feature": "swamp-wood:swamp_huge_brown_mushroom"
+      },
+      {
+        "chance": 0.0125,
+        "feature": "swamp-wood:fallen_swamp_tree"
+      }
+    ]
+  }
+}

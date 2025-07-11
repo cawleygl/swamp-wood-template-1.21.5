@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "swamp-wood:block/stripped_swamp_log_top",
+    "side": "swamp-wood:block/stripped_swamp_log"
+  }
+}

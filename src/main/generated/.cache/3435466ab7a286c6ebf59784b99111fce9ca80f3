@@ -1,0 +1,19 @@
+// 1.21.5	-999999999-01-01T00:00:00	Swamp Wood/Block Loot Tables
+6454ea9dbe80ad58e21ad560080e49a98094edfd data/swamp-wood/loot_table/blocks/potted_swamp_sapling.json
+441847cbf729fd09542fcc48b62d008b2b34ddf7 data/swamp-wood/loot_table/blocks/stripped_swamp_log.json
+756c02cc1172b0bc66db8630362c51b3981d28b5 data/swamp-wood/loot_table/blocks/stripped_swamp_wood.json
+463f966fba771ac632802807d65c8d9d9e505375 data/swamp-wood/loot_table/blocks/swamp_button.json
+92be479dc9a1f0a33aaa95995569c428e6aba4bd data/swamp-wood/loot_table/blocks/swamp_door.json
+7c4812ebdeb842db3b6bc405bcb3731a48c1c3e4 data/swamp-wood/loot_table/blocks/swamp_fence.json
+4b3a7e0a26b9c59da46f2af94eeff67ff838a325 data/swamp-wood/loot_table/blocks/swamp_fence_gate.json
+4d8b647101ea9f960d8b87bae9460362e95e307b data/swamp-wood/loot_table/blocks/swamp_hanging_sign.json
+0b3553f6a8c6f71dbcf5e43b3bbac7478b646618 data/swamp-wood/loot_table/blocks/swamp_leaves.json
+5b8a9f3c90c2647cdb53f9001690a87dc7b7b361 data/swamp-wood/loot_table/blocks/swamp_log.json
+d3b4147e4bf243f25152674319468216b93ac048 data/swamp-wood/loot_table/blocks/swamp_planks.json
+14eedd06689e80c7d4597027b8f18557e4bf20d6 data/swamp-wood/loot_table/blocks/swamp_pressure_plate.json
+d4384917cf87741c5b5e026e768c13da7d68bdb9 data/swamp-wood/loot_table/blocks/swamp_sapling.json
+f86c6fc90663aa12b8df6a55fc23549f9b12daa6 data/swamp-wood/loot_table/blocks/swamp_slab.json
+915a63d09aebe622feee17afe12833850fd9a220 data/swamp-wood/loot_table/blocks/swamp_stairs.json
+b8c5f0106fc78c828e17e2fe4c54423ddaf5c773 data/swamp-wood/loot_table/blocks/swamp_standing_sign.json
+272f19e2c44b01e7c1db16106e9f637b5a7db9cc data/swamp-wood/loot_table/blocks/swamp_trapdoor.json
+1684ebce4c70d8aa9be532f5f440802114a84b87 data/swamp-wood/loot_table/blocks/swamp_wood.json

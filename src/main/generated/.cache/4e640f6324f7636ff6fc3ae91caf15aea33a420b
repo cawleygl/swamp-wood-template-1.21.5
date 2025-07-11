@@ -1,0 +1,18 @@
+// 1.21.5	-999999999-01-01T00:00:00	Swamp Wood/Tags for minecraft:item
+fbb93ea2378cf341e724dabbf2fd05a1584d74f7 data/minecraft/tags/item/boats.json
+16e01076c71c520396c5b0ed5c89ebbe5b76218f data/minecraft/tags/item/chest_boats.json
+8b8e004531ce2152471cd26fd4c73f44f018bc7c data/minecraft/tags/item/fence_gates.json
+0dfc0b551045794431000c06a8dc824a98abd725 data/minecraft/tags/item/hanging_signs.json
+148076dc4720b0c6a849e3d2d21bb42f3ec045dc data/minecraft/tags/item/leaves.json
+092ee909b4770bc2fdc90987fc9292be3249a0f0 data/minecraft/tags/item/logs_that_burn.json
+af0fa31e5a26f65934570097297a104e6eee4a14 data/minecraft/tags/item/planks.json
+20b9a110579d32c62da6caec045328558dc8e265 data/minecraft/tags/item/saplings.json
+85a401974562b0af853d3faa31ee980e67e1226c data/minecraft/tags/item/signs.json
+183ffe09756be33be31239f5db7b69055ed85a05 data/minecraft/tags/item/wooden_buttons.json
+c1e3ca2faaa50cd2248711a5ab46a3d00f99ccbd data/minecraft/tags/item/wooden_doors.json
+7e5f6b1c13e106619031cdbfdc239d0a9de1f54c data/minecraft/tags/item/wooden_fences.json
+ef0e3ea602e30efe72c34b9f41b60eeab2256577 data/minecraft/tags/item/wooden_pressure_plates.json
+a8710cbb6fe8f3cea2b2807fe8d8117d9b7d52bb data/minecraft/tags/item/wooden_slabs.json
+754adc129ebc7bd9616bf7bc2338e43f25e4c42d data/minecraft/tags/item/wooden_stairs.json
+c98d2531bc77dd3e76c3092f9a2f082c69c9c268 data/minecraft/tags/item/wooden_trapdoors.json
+0f14617d57c41d2f74e2578beb9915d9dc674591 data/swamp-wood/tags/item/swamp_logs.json

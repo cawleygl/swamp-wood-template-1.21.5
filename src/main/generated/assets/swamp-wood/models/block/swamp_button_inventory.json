@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button_inventory",
+  "textures": {
+    "texture": "swamp-wood:block/swamp_planks"
+  }
+}

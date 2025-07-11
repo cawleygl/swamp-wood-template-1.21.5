@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "swamp-wood:block/swamp_planks",
+    "side": "swamp-wood:block/swamp_planks",
+    "top": "swamp-wood:block/swamp_planks"
+  }
+}

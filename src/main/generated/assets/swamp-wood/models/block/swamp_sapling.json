@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "swamp-wood:block/swamp_sapling"
+  }
+}

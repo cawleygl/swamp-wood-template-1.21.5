@@ -1,0 +1,17 @@
+{
+	"required": true,
+	"package": "bluesteel42.swampwood.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"HasCatAccessor",
+		"HasWitchAccessor",
+		"RegisterSwampTrunkPlacerMixin",
+		"SwampWoodHutMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}

@@ -1,0 +1,25 @@
+{
+  "item.swamp-wood.swamp_sign": "Swamp Sign",
+  "item.swamp-wood.swamp_hanging_sign": "Swamp Hanging Sign",
+  "item.swamp-wood.swamp_boat": "Swamp Boat",
+  "item.swamp-wood.swamp_chest_boat": "Swamp Boat with Chest",
+  "entity.swamp-wood.swamp_chest_boat": "Swamp Boat with Chest",
+
+  "block.swamp-wood.swamp_log": "Swamp Log",
+  "block.swamp-wood.swamp_wood": "Swamp Wood",
+  "block.swamp-wood.stripped_swamp_log": "Stripped Swamp Log",
+  "block.swamp-wood.stripped_swamp_wood": "Stripped Swamp Wood",
+
+  "block.swamp-wood.swamp_planks": "Swamp Planks",
+  "block.swamp-wood.swamp_stairs": "Swamp Stairs",
+  "block.swamp-wood.swamp_slab": "Swamp Slab",
+  "block.swamp-wood.swamp_button": "Swamp Button",
+  "block.swamp-wood.swamp_pressure_plate": "Swamp Pressure Plate",
+  "block.swamp-wood.swamp_fence": "Swamp Fence",
+  "block.swamp-wood.swamp_fence_gate": "Swamp Fence Gate",
+  "block.swamp-wood.swamp_door": "Swamp Door",
+  "block.swamp-wood.swamp_trapdoor": "Swamp Trapdoor",
+
+  "block.swamp-wood.swamp_leaves": "Swamp Leaves",
+  "block.swamp-wood.swamp_sapling": "Swamp Sapling"
+}
