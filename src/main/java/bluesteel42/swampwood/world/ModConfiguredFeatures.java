@@ -29,10 +29,10 @@ import java.util.List;
 
 public class ModConfiguredFeatures {
 
+    public static final RegistryKey<ConfiguredFeature<?, ?>> SWAMP_TREE_LEAF_LITTER_KEY = registerKey("swamp_tree_leaf_litter");
     public static final RegistryKey<ConfiguredFeature<?, ?>> SWAMP_WILLOW_KEY = registerKey("swamp_willow");
     public static final RegistryKey<ConfiguredFeature<?, ?>> FALLEN_SWAMP_TREE_KEY = registerKey("fallen_swamp_tree");
     public static final RegistryKey<ConfiguredFeature<?, ?>> TREES_SWAMP_KEY = registerKey("trees_swamp");
-    public static final RegistryKey<ConfiguredFeature<?, ?>> SWAMP_TREE_LEAF_LITTER_KEY = registerKey("swamp_tree_leaf_litter");
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
         RegistryEntryLookup<ConfiguredFeature<?, ?>> registryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);

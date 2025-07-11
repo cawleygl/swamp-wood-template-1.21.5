@@ -15,19 +15,19 @@ import java.util.List;
 public class ModPlacedFeatures {
 
     public static final RegistryKey<PlacedFeature> SWAMP_TREE_PLACED_KEY = registerKey("swamp_tree");
+    public static final RegistryKey<PlacedFeature> SWAMP_TREE_LEAF_LITTER_PLACED_KEY = registerKey("swamp_tree_leaf_litter");
     public static final RegistryKey<PlacedFeature> SWAMP_WILLOW_PLACED_KEY = registerKey("swamp_willow");
     public static final RegistryKey<PlacedFeature> HUGE_RED_MUSHROOM_PLACED_KEY = registerKey("swamp_huge_red_mushroom");
     public static final RegistryKey<PlacedFeature> HUGE_BROWN_MUSHROOM_PLACED_KEY = registerKey("swamp_huge_brown_mushroom");
     public static final RegistryKey<PlacedFeature> FALLEN_SWAMP_TREE_PLACED_KEY = registerKey("fallen_swamp_tree");
-    public static final RegistryKey<PlacedFeature> SWAMP_TREE_LEAF_LITTER_PLACED_KEY = registerKey("swamp_tree_leaf_litter");
 
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatures = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
 
-        register(context, SWAMP_TREE_LEAF_LITTER_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SWAMP_TREE_LEAF_LITTER_KEY),
+        register(context, SWAMP_TREE_PLACED_KEY, configuredFeatures.getOrThrow(TreeConfiguredFeatures.SWAMP_OAK),
                 List.of(PlacedFeatures.wouldSurvive(ModBlocks.MOD_SAPLING))
         );
-        register(context, SWAMP_TREE_PLACED_KEY, configuredFeatures.getOrThrow(TreeConfiguredFeatures.SWAMP_OAK),
+        register(context, SWAMP_TREE_LEAF_LITTER_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SWAMP_TREE_LEAF_LITTER_KEY),
                 List.of(PlacedFeatures.wouldSurvive(ModBlocks.MOD_SAPLING))
         );
         register(context, SWAMP_WILLOW_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SWAMP_WILLOW_KEY),
