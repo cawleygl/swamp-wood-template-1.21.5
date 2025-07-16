@@ -53,7 +53,7 @@ public class StandardWoodInitializer {
         // Color Leaves
         ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> {
             if (view == null || pos == null) {
-                return FoliageColors.getColor(0.5, 1.0);
+                return LEAF_TINT_COLOR;
             }
             return BiomeColors.getFoliageColor(view, pos);
         }, StandardWoodModBlocks.MOD_LEAVES);

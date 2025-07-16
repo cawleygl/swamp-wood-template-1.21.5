@@ -9,13 +9,8 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.recipe.RecipeExporter;
 import net.minecraft.data.recipe.RecipeGenerator;
-import net.minecraft.data.recipe.ShapedRecipeJsonBuilder;
-import net.minecraft.data.recipe.ShapelessRecipeJsonBuilder;
-import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
-import net.minecraft.registry.RegistryEntryLookup;
-import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 
 import java.util.concurrent.CompletableFuture;
@@ -29,15 +24,11 @@ public class StandardWoodModRecipeProvider extends FabricRecipeProvider {
     @Override
     protected RecipeGenerator getRecipeGenerator(RegistryWrapper.WrapperLookup wrapperLookup, RecipeExporter recipeExporter) {
         return new RecipeGenerator(wrapperLookup, recipeExporter) {
-
-            @Override
-            public void generate() {
-                RegistryEntryLookup<Item> registryLookup = wrapperLookup.getOrThrow(RegistryKeys.ITEM);
-
+            public void generateStandardWoodRecipes() {
                 offerBarkBlockRecipe(StandardWoodModBlocks.MOD_WOOD, StandardWoodModBlocks.MOD_LOG);
                 offerBarkBlockRecipe(StandardWoodModBlocks.STRIPPED_MOD_WOOD, StandardWoodModBlocks.STRIPPED_MOD_LOG);
                 offerPlanksRecipe(StandardWoodModBlocks.MOD_PLANKS, StandardWoodModTags.Items.MOD_LOGS, 4);
-                ShapedRecipeJsonBuilder.create(registryLookup, RecipeCategory.BUILDING_BLOCKS, StandardWoodModBlocks.MOD_STAIRS, 4)
+                createShaped(RecipeCategory.BUILDING_BLOCKS, StandardWoodModBlocks.MOD_STAIRS, 4)
                         .pattern("#  ")
                         .pattern("## ")
                         .pattern("###")
@@ -45,24 +36,24 @@ public class StandardWoodModRecipeProvider extends FabricRecipeProvider {
                         .group("wooden_stairs")
                         .criterion("has_planks", conditionsFromItem(StandardWoodModBlocks.MOD_PLANKS))
                         .offerTo(exporter);
-                ShapedRecipeJsonBuilder.create(registryLookup, RecipeCategory.BUILDING_BLOCKS, StandardWoodModBlocks.MOD_SLAB, 6)
+                createShaped(RecipeCategory.BUILDING_BLOCKS, StandardWoodModBlocks.MOD_SLAB, 6)
                         .pattern("###")
                         .input('#', StandardWoodModBlocks.MOD_PLANKS)
                         .group("wooden_slab")
                         .criterion("has_planks", conditionsFromItem(StandardWoodModBlocks.MOD_PLANKS))
                         .offerTo(exporter);
-                ShapelessRecipeJsonBuilder.create(registryLookup, RecipeCategory.REDSTONE, StandardWoodModBlocks.MOD_BUTTON, 1)
+                createShapeless(RecipeCategory.REDSTONE, StandardWoodModBlocks.MOD_BUTTON, 1)
                         .input(StandardWoodModBlocks.MOD_PLANKS)
                         .group("wooden_button")
                         .criterion("has_planks", conditionsFromItem(StandardWoodModBlocks.MOD_PLANKS))
                         .offerTo(exporter);
-                ShapedRecipeJsonBuilder.create(registryLookup, RecipeCategory.REDSTONE, StandardWoodModBlocks.MOD_PRESSURE_PLATE, 1)
+                createShaped(RecipeCategory.REDSTONE, StandardWoodModBlocks.MOD_PRESSURE_PLATE, 1)
                         .pattern("##")
                         .input('#', StandardWoodModBlocks.MOD_PLANKS)
                         .group("wooden_pressure_plate")
                         .criterion("has_planks", conditionsFromItem(StandardWoodModBlocks.MOD_PLANKS))
                         .offerTo(exporter);
-                ShapedRecipeJsonBuilder.create(registryLookup, RecipeCategory.DECORATIONS, StandardWoodModBlocks.MOD_FENCE, 3)
+                createShaped(RecipeCategory.DECORATIONS, StandardWoodModBlocks.MOD_FENCE, 3)
                         .pattern("W#W")
                         .pattern("W#W")
                         .input('#', Items.STICK)
@@ -70,7 +61,7 @@ public class StandardWoodModRecipeProvider extends FabricRecipeProvider {
                         .group("wooden_fence")
                         .criterion("has_planks", conditionsFromItem(StandardWoodModBlocks.MOD_PLANKS))
                         .offerTo(exporter);
-                ShapedRecipeJsonBuilder.create(registryLookup, RecipeCategory.REDSTONE, StandardWoodModBlocks.MOD_FENCE_GATE, 1)
+                createShaped(RecipeCategory.REDSTONE, StandardWoodModBlocks.MOD_FENCE_GATE, 1)
                         .pattern("#W#")
                         .pattern("#W#")
                         .input('#', Items.STICK)
@@ -78,7 +69,7 @@ public class StandardWoodModRecipeProvider extends FabricRecipeProvider {
                         .group("wooden_fence_gate")
                         .criterion("has_planks", conditionsFromItem(StandardWoodModBlocks.MOD_PLANKS))
                         .offerTo(exporter);
-                ShapedRecipeJsonBuilder.create(registryLookup, RecipeCategory.REDSTONE, StandardWoodModBlocks.MOD_DOOR, 3)
+                createShaped(RecipeCategory.REDSTONE, StandardWoodModBlocks.MOD_DOOR, 3)
                         .pattern("##")
                         .pattern("##")
                         .pattern("##")
@@ -86,14 +77,14 @@ public class StandardWoodModRecipeProvider extends FabricRecipeProvider {
                         .group("wooden_door")
                         .criterion("has_planks", conditionsFromItem(StandardWoodModBlocks.MOD_PLANKS))
                         .offerTo(exporter);
-                ShapedRecipeJsonBuilder.create(registryLookup, RecipeCategory.REDSTONE, StandardWoodModBlocks.MOD_TRAPDOOR, 2)
+                createShaped(RecipeCategory.REDSTONE, StandardWoodModBlocks.MOD_TRAPDOOR, 2)
                         .pattern("###")
                         .pattern("###")
                         .input('#', StandardWoodModBlocks.MOD_PLANKS)
                         .group("wooden_trapdoor")
                         .criterion("has_planks", conditionsFromItem(StandardWoodModBlocks.MOD_PLANKS))
                         .offerTo(exporter);
-                ShapedRecipeJsonBuilder.create(registryLookup, RecipeCategory.DECORATIONS, StandardWoodModItems.MOD_SIGN, 3)
+                createShaped(RecipeCategory.DECORATIONS, StandardWoodModItems.MOD_SIGN, 3)
                         .pattern("###")
                         .pattern("###")
                         .pattern(" X ")
@@ -105,7 +96,11 @@ public class StandardWoodModRecipeProvider extends FabricRecipeProvider {
                 offerHangingSignRecipe(StandardWoodModItems.MOD_HANGING_SIGN, StandardWoodModBlocks.STRIPPED_MOD_LOG);
                 offerBoatRecipe(StandardWoodModBoats.MOD_BOAT, StandardWoodModBlocks.MOD_PLANKS);
                 offerChestBoatRecipe(StandardWoodModBoats.MOD_CHEST_BOAT, StandardWoodModBoats.MOD_BOAT);
+            }
 
+            @Override
+            public void generate() {
+                generateStandardWoodRecipes();
             }
         };
     }
