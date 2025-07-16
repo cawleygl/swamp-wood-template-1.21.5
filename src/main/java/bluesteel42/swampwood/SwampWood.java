@@ -1,6 +1,6 @@
 package bluesteel42.swampwood;
 
-import bluesteel42.standard_wood_initializer.StandardWoodInitializer;
+import bluesteel42.swampwood.standard_wood_initializer.StandardWoodInitializer;
 import bluesteel42.swampwood.world.tree.ModTreeBuilders;
 import net.fabricmc.api.ModInitializer;
 

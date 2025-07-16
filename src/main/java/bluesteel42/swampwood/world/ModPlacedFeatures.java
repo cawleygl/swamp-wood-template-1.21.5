@@ -1,7 +1,7 @@
 package bluesteel42.swampwood.world;
 
 import bluesteel42.swampwood.SwampWood;
-import bluesteel42.standard_wood_initializer.block.ModBlocks;
+import bluesteel42.swampwood.standard_wood_initializer.block.StandardWoodModBlocks;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
@@ -25,22 +25,22 @@ public class ModPlacedFeatures {
         var configuredFeatures = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
 
         register(context, SWAMP_TREE_PLACED_KEY, configuredFeatures.getOrThrow(TreeConfiguredFeatures.SWAMP_OAK),
-                List.of(PlacedFeatures.wouldSurvive(ModBlocks.MOD_SAPLING))
+                List.of(PlacedFeatures.wouldSurvive(StandardWoodModBlocks.MOD_SAPLING))
         );
         register(context, SWAMP_TREE_LEAF_LITTER_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SWAMP_TREE_LEAF_LITTER_KEY),
-                List.of(PlacedFeatures.wouldSurvive(ModBlocks.MOD_SAPLING))
+                List.of(PlacedFeatures.wouldSurvive(StandardWoodModBlocks.MOD_SAPLING))
         );
         register(context, SWAMP_WILLOW_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SWAMP_WILLOW_KEY),
-                List.of(PlacedFeatures.wouldSurvive(ModBlocks.MOD_SAPLING))
+                List.of(PlacedFeatures.wouldSurvive(StandardWoodModBlocks.MOD_SAPLING))
         );
         register(context, HUGE_RED_MUSHROOM_PLACED_KEY, configuredFeatures.getOrThrow(TreeConfiguredFeatures.HUGE_RED_MUSHROOM),
-                List.of(PlacedFeatures.wouldSurvive(ModBlocks.MOD_SAPLING))
+                List.of(PlacedFeatures.wouldSurvive(StandardWoodModBlocks.MOD_SAPLING))
         );
         register(context, HUGE_BROWN_MUSHROOM_PLACED_KEY, configuredFeatures.getOrThrow(TreeConfiguredFeatures.HUGE_BROWN_MUSHROOM),
-                List.of(PlacedFeatures.wouldSurvive(ModBlocks.MOD_SAPLING))
+                List.of(PlacedFeatures.wouldSurvive(StandardWoodModBlocks.MOD_SAPLING))
         );
         register(context, FALLEN_SWAMP_TREE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.FALLEN_SWAMP_TREE_KEY),
-                List.of(PlacedFeatures.wouldSurvive(ModBlocks.MOD_SAPLING))
+                List.of(PlacedFeatures.wouldSurvive(StandardWoodModBlocks.MOD_SAPLING))
         );
 
     }

@@ -1,11 +1,11 @@
-package bluesteel42.standard_wood_initializer;
+package bluesteel42.swampwood.standard_wood_initializer;
 
 import bluesteel42.swampwood.SwampWood;
 import bluesteel42.swampwood.world.ModConfiguredFeatures;
-import bluesteel42.standard_wood_initializer.block.ModBlocks;
-import bluesteel42.standard_wood_initializer.entity.ModBoats;
-import bluesteel42.standard_wood_initializer.item.ModItems;
-import bluesteel42.standard_wood_initializer.registries.ModRegistries;
+import bluesteel42.swampwood.standard_wood_initializer.block.StandardWoodModBlocks;
+import bluesteel42.swampwood.standard_wood_initializer.entity.StandardWoodModBoats;
+import bluesteel42.swampwood.standard_wood_initializer.item.StandardWoodModItems;
+import bluesteel42.swampwood.standard_wood_initializer.registries.StandardWoodModRegistries;
 import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.minecraft.block.MapColor;
@@ -18,6 +18,10 @@ import net.minecraft.world.gen.feature.TreeConfiguredFeatures;
 import java.util.Optional;
 
 public class StandardWoodInitializer {
+    /*
+     * Standard Wood Type Initializer
+     *  - Edits: None
+     */
     public static String MOD_ID = SwampWood.MOD_ID;
     public static String WOOD_TYPE = "swamp";
     public static MapColor BARK_COLOR = MapColor.GREEN;
@@ -33,18 +37,18 @@ public class StandardWoodInitializer {
     public static Optional<RegistryKey<ConfiguredFeature<?, ?>>> SAPLING_RARE_BEES_TREE = Optional.empty();
 
     public static void initalizeWoodType() {
-        ModBlocks.initialize();
-        ModItems.initialize();
-        ModBoats.initialize();
-        ModRegistries.registerStrippables();
-        ModRegistries.registerCompostables();
-        ModRegistries.registerFlammables();
-        ModRegistries.registerTrades();
+        StandardWoodModBlocks.initialize();
+        StandardWoodModItems.initialize();
+        StandardWoodModBoats.initialize();
+        StandardWoodModRegistries.registerStrippables();
+        StandardWoodModRegistries.registerCompostables();
+        StandardWoodModRegistries.registerFlammables();
+        StandardWoodModRegistries.registerTrades();
     }
 
     public static void initializeWoodTypeClient() {
         // Register Boat Models
-        TerraformBoatClientHelper.registerModelLayers(ModBoats.MOD_BOATS_ID);
+        TerraformBoatClientHelper.registerModelLayers(StandardWoodModBoats.MOD_BOATS_ID);
 
         // Color Leaves
         ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> {
@@ -52,6 +56,6 @@ public class StandardWoodInitializer {
                 return FoliageColors.getColor(0.5, 1.0);
             }
             return BiomeColors.getFoliageColor(view, pos);
-        }, ModBlocks.MOD_LEAVES);
+        }, StandardWoodModBlocks.MOD_LEAVES);
     }
 }

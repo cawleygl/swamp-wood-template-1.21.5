@@ -1,7 +1,7 @@
-package bluesteel42.standard_wood_initializer.block;
+package bluesteel42.swampwood.standard_wood_initializer.block;
 
-import bluesteel42.standard_wood_initializer.StandardWoodInitializer;
-import bluesteel42.standard_wood_initializer.tree.ModSaplingGenerators;
+import bluesteel42.swampwood.standard_wood_initializer.StandardWoodInitializer;
+import bluesteel42.swampwood.standard_wood_initializer.tree.StandardWoodModSaplingGenerators;
 import com.terraformersmc.terraform.sign.api.block.TerraformHangingSignBlock;
 import com.terraformersmc.terraform.sign.api.block.TerraformSignBlock;
 import com.terraformersmc.terraform.sign.api.block.TerraformWallHangingSignBlock;
@@ -23,7 +23,7 @@ import net.minecraft.util.Identifier;
 
 import java.util.function.Function;
 
-public class ModBlocks {
+public class StandardWoodModBlocks {
     public static final Block MOD_LOG = register(StandardWoodInitializer.WOOD_TYPE + "_log", PillarBlock::new, Blocks.createLogSettings(StandardWoodInitializer.FIBER_COLOR, StandardWoodInitializer.BARK_COLOR, BlockSoundGroup.WOOD), true, false);
     public static final Block MOD_WOOD = register(StandardWoodInitializer.WOOD_TYPE + "_wood", PillarBlock::new, Blocks.createLogSettings(StandardWoodInitializer.BARK_COLOR, StandardWoodInitializer.BARK_COLOR, BlockSoundGroup.WOOD), true, false);
     public static final Block STRIPPED_MOD_LOG = register("stripped_" + StandardWoodInitializer.WOOD_TYPE + "_log", PillarBlock::new, Blocks.createLogSettings(StandardWoodInitializer.FIBER_COLOR, StandardWoodInitializer.FIBER_COLOR, BlockSoundGroup.WOOD), true, false);
@@ -137,7 +137,7 @@ public class ModBlocks {
     public static final Identifier MOD_HANGING_SIGN_TEXTURE = Identifier.of(StandardWoodInitializer.MOD_ID, "entity/signs/hanging/" + StandardWoodInitializer.WOOD_TYPE);
     public static final Identifier MOD_HANGING_GUI_SIGN_TEXTURE = Identifier.of(StandardWoodInitializer.MOD_ID, "textures/gui/hanging_signs/" + StandardWoodInitializer.WOOD_TYPE);
     public static final Block MOD_STANDING_SIGN = register(
-            StandardWoodInitializer.WOOD_TYPE + "_standing_sign",
+            StandardWoodInitializer.WOOD_TYPE + "_sign",
             settings -> new TerraformSignBlock(MOD_SIGN_TEXTURE, settings),
             AbstractBlock.Settings.copy(Blocks.OAK_SIGN).mapColor(StandardWoodInitializer.FIBER_COLOR),
             false,
@@ -161,15 +161,15 @@ public class ModBlocks {
     );
 
     public static final Block MOD_WALL_HANGING_SIGN = register(
-            StandardWoodInitializer.WOOD_TYPE + "_hanging_wall_sign",
+            StandardWoodInitializer.WOOD_TYPE + "_wall_hanging_sign",
             settings -> new TerraformWallHangingSignBlock(MOD_HANGING_SIGN_TEXTURE, MOD_HANGING_GUI_SIGN_TEXTURE, settings),
             AbstractBlock.Settings.copy(Blocks.OAK_HANGING_SIGN).mapColor(StandardWoodInitializer.FIBER_COLOR).lootTable(MOD_HANGING_SIGN.getLootTableKey()).overrideTranslationKey(MOD_HANGING_SIGN.getTranslationKey()),
             false,
             false
     );
 
-    public static final BlockFamily MOD_SIGN_FAMILY = BlockFamilies.register(ModBlocks.MOD_PLANKS)
-            .sign(ModBlocks.MOD_STANDING_SIGN, ModBlocks.MOD_WALL_SIGN)
+    public static final BlockFamily MOD_SIGN_FAMILY = BlockFamilies.register(StandardWoodModBlocks.MOD_PLANKS)
+            .sign(StandardWoodModBlocks.MOD_STANDING_SIGN, StandardWoodModBlocks.MOD_WALL_SIGN)
             .group("wooden").unlockCriterionName("has_planks").build();
 
     public static final Block MOD_LEAVES = register(
@@ -181,7 +181,7 @@ public class ModBlocks {
     );
     public static final Block MOD_SAPLING = register(
             StandardWoodInitializer.WOOD_TYPE + "_sapling",
-            settings -> new SaplingBlock(ModSaplingGenerators.MOD_SAPLING_GENERATOR, settings),
+            settings -> new SaplingBlock(StandardWoodModSaplingGenerators.MOD_SAPLING_GENERATOR, settings),
             AbstractBlock.Settings.copy(Blocks.OAK_SAPLING),
             true,
             true
@@ -214,25 +214,25 @@ public class ModBlocks {
     public static void initialize() {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS)
                 .register((itemGroup) -> {
-                    itemGroup.addAfter(Items.PALE_OAK_BUTTON, ModBlocks.MOD_BUTTON);
-                    itemGroup.addAfter(Items.PALE_OAK_BUTTON, ModBlocks.MOD_PRESSURE_PLATE);
-                    itemGroup.addAfter(Items.PALE_OAK_BUTTON, ModBlocks.MOD_TRAPDOOR);
-                    itemGroup.addAfter(Items.PALE_OAK_BUTTON, ModBlocks.MOD_DOOR);
-                    itemGroup.addAfter(Items.PALE_OAK_BUTTON, ModBlocks.MOD_FENCE_GATE);
-                    itemGroup.addAfter(Items.PALE_OAK_BUTTON, ModBlocks.MOD_FENCE);
-                    itemGroup.addAfter(Items.PALE_OAK_BUTTON, ModBlocks.MOD_SLAB);
-                    itemGroup.addAfter(Items.PALE_OAK_BUTTON, ModBlocks.MOD_STAIRS);
-                    itemGroup.addAfter(Items.PALE_OAK_BUTTON, ModBlocks.MOD_PLANKS);
-                    itemGroup.addAfter(Items.PALE_OAK_BUTTON, ModBlocks.STRIPPED_MOD_WOOD);
-                    itemGroup.addAfter(Items.PALE_OAK_BUTTON, ModBlocks.STRIPPED_MOD_LOG);
-                    itemGroup.addAfter(Items.PALE_OAK_BUTTON, ModBlocks.MOD_WOOD);
-                    itemGroup.addAfter(Items.PALE_OAK_BUTTON, ModBlocks.MOD_LOG);
+                    itemGroup.addAfter(Items.PALE_OAK_BUTTON, StandardWoodModBlocks.MOD_BUTTON);
+                    itemGroup.addAfter(Items.PALE_OAK_BUTTON, StandardWoodModBlocks.MOD_PRESSURE_PLATE);
+                    itemGroup.addAfter(Items.PALE_OAK_BUTTON, StandardWoodModBlocks.MOD_TRAPDOOR);
+                    itemGroup.addAfter(Items.PALE_OAK_BUTTON, StandardWoodModBlocks.MOD_DOOR);
+                    itemGroup.addAfter(Items.PALE_OAK_BUTTON, StandardWoodModBlocks.MOD_FENCE_GATE);
+                    itemGroup.addAfter(Items.PALE_OAK_BUTTON, StandardWoodModBlocks.MOD_FENCE);
+                    itemGroup.addAfter(Items.PALE_OAK_BUTTON, StandardWoodModBlocks.MOD_SLAB);
+                    itemGroup.addAfter(Items.PALE_OAK_BUTTON, StandardWoodModBlocks.MOD_STAIRS);
+                    itemGroup.addAfter(Items.PALE_OAK_BUTTON, StandardWoodModBlocks.MOD_PLANKS);
+                    itemGroup.addAfter(Items.PALE_OAK_BUTTON, StandardWoodModBlocks.STRIPPED_MOD_WOOD);
+                    itemGroup.addAfter(Items.PALE_OAK_BUTTON, StandardWoodModBlocks.STRIPPED_MOD_LOG);
+                    itemGroup.addAfter(Items.PALE_OAK_BUTTON, StandardWoodModBlocks.MOD_WOOD);
+                    itemGroup.addAfter(Items.PALE_OAK_BUTTON, StandardWoodModBlocks.MOD_LOG);
                 });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL)
                 .register((itemGroup) -> {
-                    itemGroup.addAfter(Items.PALE_OAK_LOG, ModBlocks.MOD_LOG);
-                    itemGroup.addAfter(Items.PALE_OAK_LEAVES, ModBlocks.MOD_LEAVES);
-                    itemGroup.addAfter(Items.PALE_OAK_SAPLING, ModBlocks.MOD_SAPLING);
+                    itemGroup.addAfter(Items.PALE_OAK_LOG, StandardWoodModBlocks.MOD_LOG);
+                    itemGroup.addAfter(Items.PALE_OAK_LEAVES, StandardWoodModBlocks.MOD_LEAVES);
+                    itemGroup.addAfter(Items.PALE_OAK_SAPLING, StandardWoodModBlocks.MOD_SAPLING);
                 });
     }
 }

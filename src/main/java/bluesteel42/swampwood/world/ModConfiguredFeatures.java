@@ -1,7 +1,7 @@
 package bluesteel42.swampwood.world;
 
 import bluesteel42.swampwood.SwampWood;
-import bluesteel42.standard_wood_initializer.block.ModBlocks;
+import bluesteel42.swampwood.standard_wood_initializer.block.StandardWoodModBlocks;
 import bluesteel42.swampwood.world.tree.SwampTrunkPlacer;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.block.BlockState;
@@ -43,25 +43,25 @@ public class ModConfiguredFeatures {
                 150, 2, 2, new WeightedBlockStateProvider(VegetationConfiguredFeatures.leafLitter(1, 4))
         );
         register(context, SWAMP_TREE_LEAF_LITTER_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
-                BlockStateProvider.of(ModBlocks.MOD_LOG),
+                BlockStateProvider.of(StandardWoodModBlocks.MOD_LOG),
                 new StraightTrunkPlacer(5, 3, 0),
-                BlockStateProvider.of(ModBlocks.MOD_LEAVES),
+                BlockStateProvider.of(StandardWoodModBlocks.MOD_LEAVES),
                 new BlobFoliagePlacer(ConstantIntProvider.create(3), ConstantIntProvider.create(0), 3),
                 new TwoLayersFeatureSize(1, 0, 1)
         ).decorators(ImmutableList.of(new LeavesVineTreeDecorator(0.25F), placeOnGroundTreeDecorator, placeOnGroundTreeDecorator2)).build());
 
 
         register(context, SWAMP_WILLOW_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
-                BlockStateProvider.of(ModBlocks.MOD_LOG),
+                BlockStateProvider.of(StandardWoodModBlocks.MOD_LOG),
                 new SwampTrunkPlacer(6, 3, 2, UniformIntProvider.create(2, 4), UniformIntProvider.create(7, 9), UniformIntProvider.create(3, 5), UniformIntProvider.create(3, 4), UniformIntProvider.create(2, 4)),
-                BlockStateProvider.of(ModBlocks.MOD_LEAVES),
+                BlockStateProvider.of(StandardWoodModBlocks.MOD_LEAVES),
                 new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 2),
                 new TwoLayersFeatureSize(1, 0, 1)
         )
                 .decorators(ImmutableList.of(new LeavesVineTreeDecorator(0.7F)))
                 .build());
 
-        register(context, FALLEN_SWAMP_TREE_KEY, Feature.FALLEN_TREE, new FallenTreeFeatureConfig.Builder(BlockStateProvider.of(ModBlocks.MOD_LOG), UniformIntProvider.create(5, 8))
+        register(context, FALLEN_SWAMP_TREE_KEY, Feature.FALLEN_TREE, new FallenTreeFeatureConfig.Builder(BlockStateProvider.of(StandardWoodModBlocks.MOD_LOG), UniformIntProvider.create(5, 8))
                 .logDecorators(
                         ImmutableList.of(
                                 new AttachedToLogsTreeDecorator(

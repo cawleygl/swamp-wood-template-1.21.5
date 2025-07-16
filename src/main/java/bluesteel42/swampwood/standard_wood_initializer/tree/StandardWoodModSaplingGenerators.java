@@ -1,9 +1,9 @@
-package bluesteel42.standard_wood_initializer.tree;
+package bluesteel42.swampwood.standard_wood_initializer.tree;
 
-import bluesteel42.standard_wood_initializer.StandardWoodInitializer;
+import bluesteel42.swampwood.standard_wood_initializer.StandardWoodInitializer;
 import net.minecraft.block.SaplingGenerator;
 
-public class ModSaplingGenerators {
+public class StandardWoodModSaplingGenerators {
     public static final SaplingGenerator MOD_SAPLING_GENERATOR = new SaplingGenerator(
             StandardWoodInitializer.MOD_ID + ":" + StandardWoodInitializer.WOOD_TYPE,
             StandardWoodInitializer.SAPLING_RARE_VARIANT_CHANCE,
